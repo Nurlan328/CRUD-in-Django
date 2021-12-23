@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Apple</title>
+	<meta name="viewport" content = 'width = device-width, intial-scale=1'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+	<div class="wrapper">
+        {% block header %}
+            <header class="w3-display-container w3-wide w3-grayscale-min">
+                <div class="title">
+                    <div class="header">
+                        <nav class="navbar navbar-expand-md sticky-top">
+                            <div class="container">
+                                <button class="navbar-toggler bg-light	navbar-light" type="button" data-toggle="collapse" data-target="#navbarResponsive" data-target="#navbarResponsive" style="width: 10%; font-size: 30%;">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+
+
+                                <a href="{% url 'home' %}" class="navbar-brand mr-auto ml-auto"><i class="fa fa-apple" style="font-size:40px; color: #fff;"></i></a>
+
+
+
+                                <button class="navbar-toggler bg-light	navbar-light" type="button" data-toggle="collapse" data-target="#navbarResponsive2" data-target="#navbarResponsive2" style="width: 10%; font-size: 30%;">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+
+                                <div class="collapse navbar-collapse" id="navbarResponsive">
+                                    <ul class="navbar-nav ml-auto text-uppercase">
+                                        <li class="nav-item">
+                                            <a href="{% url 'home' %}" class="nav-link">main</a>
+                                        <li class="nav-item">
+                                            <a href="/#product" class="nav-link">Products</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/#about" class="nav-link">about</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/#about" class="nav-link">store</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'gallery' %}" class="nav-link">gallery</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'office' %}" class="nav-link">office</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'products' %}" class="nav-link">NEW</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="collapse navbar-collapse" id="navbarResponsive2">
+                                    <ul class="navbar-nav ml-auto text-uppercase">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-toggle="modal" data-target="#registrationModal">Registration</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom-0">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="form-title text-center">
+                                <h4>Login</h4>
+                            </div>
+
+
+                            <div class="d-flex flex-column text-center">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password1" placeholder="Your password...">
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                                </form>
+
+                                <div class="text-center text-muted delimiter">or use a social network</div>
+
+                                <div class="d-flex justify-content-center social-buttons">
+                                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </button>
+
+
+                                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </button>
+
+
+                                    <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+                                        <i class="fa fa-linkedin"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Registration</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input type="text" id="orangeForm-name" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="email" id="orangeForm-email" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+                    </div>
+
+                    <div class="md-form mb-4">
+                      <i class="fa fa-lock prefix grey-text"></i>
+                      <input type="password" id="orangeForm-pass" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-info btn-block btn-round">Sign up</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endblock %}
+
+        <div class="content">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="text-center text-light">
+                        Copyright © 2021 Apple Inc. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+    </div>
+</body>
